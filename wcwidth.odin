@@ -42,10 +42,10 @@ wcwidth :: proc(r: rune) -> int {
  // small optimization: early return of 1 for printable ASCII, this provides
  // approximately 40% performance improvement for mostly-ascii documents, with
  // less than 1% impact to others.
- if r >= 32 && r < 0x7f do return 1
+ if 32 <= r && r < 0x7f do return 1
 
  // C0/C1 control characters are -1 for compatibility with POSIX-like calls
- if (r != 0 && r < 32) || (r >= 0x07F && r < 0x0A0) do return -1
+ if r < 32 || (0x07F <= r && r < 0x0A0) do return -1
 
  // Zero width
  if bisearch(r, ZERO_WIDTH) do return 0
