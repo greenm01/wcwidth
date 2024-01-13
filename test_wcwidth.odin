@@ -35,7 +35,9 @@ main :: proc() {
 
  japanese := "コンニチハ"
  fmt.println(japanese, "len =", wcswidth(japanese))
-
+ mixed := "つのだ⭐HIRO"
+ fmt.println(mixed, "len =", wcswidth(mixed))
+ 
  if test_failures > 0 do fmt.printf("%d tests FAILED, ", test_failures)
  fmt.printf("%d tests OK\n", tests_run - test_failures)
 
