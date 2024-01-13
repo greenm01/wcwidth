@@ -33,6 +33,9 @@ main :: proc() {
  assert_width(2, 0x1F428) // Koala emoji.
  assert_width(2, 0x231a)  // Watch emoji.
 
+ japanese := "コンニチハ"
+ fmt.println(japanese, "len =", wcswidth(japanese))
+
  if test_failures > 0 do fmt.printf("%d tests FAILED, ", test_failures)
  fmt.printf("%d tests OK\n", tests_run - test_failures)
 
