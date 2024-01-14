@@ -11,7 +11,6 @@ package wcwidth
 
 import "core:unicode/utf8"
 import "core:strings"
-import "core:fmt"
 
 Interval :: struct {
 	first, last: rune,
