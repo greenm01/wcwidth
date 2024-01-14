@@ -38,6 +38,9 @@ bisearch :: proc(r: rune, t: Table) -> bool {
 	return false
 }
 
+// procedure alias
+rune_width :: wcwidth
+
 // Return the visible rune width
 wcwidth :: proc(r: rune) -> int {
 	// small optimization: early return of 1 for printable ASCII, this provides
@@ -55,6 +58,9 @@ wcwidth :: proc(r: rune) -> int {
 	return bisearch(r, WIDE_EASTASIAN) ? 2 : 1
 
 }
+
+// procedure alias
+string_width :: wcswidth
 
 // Return the visible string width
 wcswidth :: proc(s: string) -> int {
